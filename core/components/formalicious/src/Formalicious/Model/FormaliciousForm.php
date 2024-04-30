@@ -39,15 +39,15 @@ class FormaliciousForm extends \xPDO\Om\xPDOSimpleObject
      * @return Boolean.
      */
     public function isPublished()
-    {
+    {        
         if (!in_array($this->get('published_from'), ['-001-11-30 00:00:00', '-1-11-30 00:00:00', '0000-00-00 00:00:00', null], true)) {
-            if (strtotime($this->get('published_from')) >= time()) {
+            if ($this->get('published_from') >= date_create()->format('Y-m-d H:i:s')) {
                 return false;
             }
         }
 
         if (!in_array($this->get('published_till'), ['-001-11-30 00:00:00', '-1-11-30 00:00:00', '0000-00-00 00:00:00', null], true)) {
-            if (strtotime($this->get('published_till')) <= time()) {
+            if ($this->get('published_till') <= date_create()->format('Y-m-d H:i:s')) {
                 return false;
             }
         }

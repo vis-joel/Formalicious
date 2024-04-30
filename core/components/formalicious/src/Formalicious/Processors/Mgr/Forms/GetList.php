@@ -91,20 +91,20 @@ class GetList extends GetListProcessor
         if (in_array($object->get('published_from'), ['-001-11-30 00:00:00', '-1-11-30 00:00:00', '0000-00-00 00:00:00', null], true)) {
             $array['published_from'] = '';
         } else {
-            $array['published_from'] = date($this->getProperty('dateFormat'), strtotime($object->get('published_from')));
+            $array['published_from'] = $object->get('published_from');
         }
 
         if (in_array($object->get('published_till'), ['-001-11-30 00:00:00', '-1-11-30 00:00:00', '0000-00-00 00:00:00', null], true)) {
             $array['published_till'] = '';
         } else {
-            $array['published_till'] = date($this->getProperty('dateFormat'), strtotime($object->get('published_till')));
+            $array['published_till'] = $object->get('published_till');
         }
 
-        if (!empty($array['published_from']) && strtotime($array['published_from']) >= time()) {
+        if (!empty($array['published_from']) && $array['published_from'] >= date_create()->format('Y-m-d H:i:s')) {
             $array['published'] = 0;
         }
 
-        if (!empty($array['published_till']) && strtotime($array['published_till']) <= time()) {
+        if (!empty($array['published_till']) && $array['published_till'] <= date_create()->format('Y-m-d H:i:s')) {
             $array['published'] = 0;
         }
 

@@ -24,6 +24,7 @@ class FormaliciousForm extends \Sterc\Formalicious\Model\FormaliciousForm
             'published_till' => '0000-00-00 00:00:00',
             'saveform' => 0,
             'redirectto' => 0,
+            'form_action' => '',
             'email' => 0,
             'emailto' => '',
             'emailsubject' => '',
@@ -57,6 +58,14 @@ class FormaliciousForm extends \Sterc\Formalicious\Model\FormaliciousForm
                 'null' => false,
                 'default' => '',
             ),
+            'form_action' => 
+            array (
+                'dbtype' => 'varchar',
+                'precision' => '255',
+                'phptype' => 'string',
+                'null' => false,
+                'default' => '',
+            ),
             'published' => 
             array (
                 'dbtype' => 'tinyint',
@@ -69,17 +78,17 @@ class FormaliciousForm extends \Sterc\Formalicious\Model\FormaliciousForm
             ),
             'published_from' => 
             array (
-                'dbtype' => 'timestamp',
+                'dbtype' => 'datetime',
                 'precision' => '1',
-                'phptype' => 'timestamp',
+                'phptype' => 'datetime',
                 'null' => false,
                 'default' => '0000-00-00 00:00:00',
             ),
             'published_till' => 
             array (
-                'dbtype' => 'timestamp',
+                'dbtype' => 'datetime',
                 'precision' => '1',
-                'phptype' => 'timestamp',
+                'phptype' => 'datetime',
                 'null' => false,
                 'default' => '0000-00-00 00:00:00',
             ),

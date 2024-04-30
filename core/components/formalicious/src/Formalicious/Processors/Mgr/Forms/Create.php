@@ -56,11 +56,11 @@ class Create extends CreateProcessor
     public function beforeSet()
     {
         if (empty($this->getProperty('published_from'))) {
-            $this->object->set('published_from', '0000-00-00 00:00:00');
+            $this->object->set('published_from', date_create()->format('Y-m-d H:i:s'));
         }
 
         if (empty($this->getProperty('published_till'))) {
-            $this->object->set('published_till', '0000-00-00 00:00:00');
+            $this->object->set('published_till', date_create('+10 years')->format('Y-m-d H:i:s'));
         }
 
         return parent::beforeSet();

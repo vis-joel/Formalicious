@@ -110,7 +110,22 @@ Formalicious.panel.Update = function(config) {
                 cls             : 'desc-under',
                 width           : 500,
                 style           : 'margin-left: 155px'
-            }, settings]
+            }, settings
+            , {
+                xtype           : 'textfield',
+                fieldLabel      : _('formalicious.settings.label_action'),
+                description     : MODx.expandHelp ? '' : _('formalicious.settings.label_action_desc'),
+                name            : 'form_action',
+                width           : 500,
+                allowBlank      : true,
+                enableKeyEvents : true,
+            }, {
+                xtype           : 'label',
+                html            : _('formalicious.settings.label_action_desc'),
+                cls             : 'desc-under',
+                width           : 500,
+                style           : 'margin-left: 155px'
+            }]
         }, {
             html            : '<p>' + _('formalicious.settings.email.desc') + '</p>',
             bodyCssClass    : 'panel-desc'

@@ -107,11 +107,11 @@ class Update extends Base
             $form = $this->form->toArray();
 
             if (in_array($this->form->get('published_from'), ['-001-11-30 00:00:00', '-1-11-30 00:00:00', '0000-00-00 00:00:00', null], true)) {
-                $form['published_from'] = '';
+                $form['published_from'] = date_create()->format('Y-m-d H:i:s');
             }
 
             if (in_array($this->form->get('published_till'), ['-001-11-30 00:00:00', '-1-11-30 00:00:00', '0000-00-00 00:00:00', null], true)) {
-                $form['published_till'] = '';
+                $form['published_till'] = date_create('+10 years')->format('Y-m-d H:i:s');
             }
 
             if (!empty($this->form->get('parameters'))) {

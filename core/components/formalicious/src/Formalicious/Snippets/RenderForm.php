@@ -189,9 +189,10 @@ class RenderForm extends Base
                         }
                     }
 
-                    if ((int) $form->get('redirectto') !== 0) {
+                    if ((int) $form->get('redirectto') !== 0 || !empty($form->get('form_action')) ) {
                         $hooks[] = 'redirect';
 
+                        $parameters['formAction'] = $form->get('form_action');
                         $parameters['redirectTo'] = (int) $form->get('redirectto');
                     }
 
