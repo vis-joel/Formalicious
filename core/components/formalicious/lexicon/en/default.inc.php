@@ -94,6 +94,8 @@ $_lang['formalicious.settings.fair.desc']                       = 'Here you can 
 
 $_lang['formalicious.settings.label_name']                      = 'Name';
 $_lang['formalicious.settings.label_name_desc']                 = 'The name of the form, this name is only visible within the MODx manager.';
+$_lang['formalicious.settings.label_action']                    = 'Form Action';
+$_lang['formalicious.settings.label_action_desc']               = 'The URL to post the form to, leave empty to post to the current page as default handling.';
 $_lang['formalicious.settings.label_email']                     = 'Email';
 $_lang['formalicious.settings.label_email_desc']                = 'When filled an email will be sent after the visitor completes the form.';
 $_lang['formalicious.settings.label_emailto']                   = 'Email Receiver';

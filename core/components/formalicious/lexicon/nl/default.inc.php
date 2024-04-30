@@ -94,6 +94,8 @@ $_lang['formalicious.settings.fair.desc']                       = 'Hier kan je d
 
 $_lang['formalicious.settings.label_name']                      = 'Naam';
 $_lang['formalicious.settings.label_name_desc']                 = 'De naam van het formulier, deze naam wordt alleen binnen de MODX Manager gebruikt.';
+$_lang['formalicious.settings.label_action']                    = 'Formulier actie';
+$_lang['formalicious.settings.label_action_desc']               = 'Afwijkende afhandel URL. Laat het leeg voor standaard afhandeling.';
 $_lang['formalicious.settings.label_email']                     = 'E-mail';
 $_lang['formalicious.settings.label_email_desc']                = 'Indien aangevinkt zal er een e-mail verstuurd worden zodra de bezoeker het formulier invult.';
 $_lang['formalicious.settings.label_emailto']                   = 'E-mail ontvanger';
