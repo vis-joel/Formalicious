@@ -1,3 +1,7 @@
+Version 3.1.0-pl
+- Move to datetime object to prevent forms from breaking when publishing beyond 2038
+- Add form action field to which the form will be posted instead of the landingspage (requires latest FormIt.)
+
 Version 3.0.0-pl
 - MODX3 Refactor
 
