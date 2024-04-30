@@ -189,10 +189,9 @@ class RenderForm extends Base
                         }
                     }
 
-                    if ((int) $form->get('redirectto') !== 0 || !empty($form->get('form_action')) ) {
+                    if ((int) $form->get('redirectto') !== 0) {
                         $hooks[] = 'redirect';
 
-                        $parameters['formAction'] = $form->get('form_action');
                         $parameters['redirectTo'] = (int) $form->get('redirectto');
                     }
 
@@ -201,6 +200,10 @@ class RenderForm extends Base
                     }
                 } else {
                     $hooks[] = 'redirect';
+                    
+                    if (!empty($form->get('form_action'))) {
+                        $parameters['formAction'] = $form->get('form_action');
+                    }
 
                     $parameters['redirectTo'] = $this->getStepUrl([
                         $this->getProperty('stepParam') => $currentStep + 1
